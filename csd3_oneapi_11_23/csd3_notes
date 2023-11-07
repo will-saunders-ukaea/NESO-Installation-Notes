@@ -1,0 +1,26 @@
+# NESO on CSD3
+# 06/11/23
+
+mkdir -p $SCRATCH/git
+cd $SCRATCH/git
+
+git clone https://github.com/spack/spack.git spack-neso
+cd spack-neso
+git checkout releases/v0.19
+source $SCRATCH/git/spack-neso/share/spack/setup-env.sh
+
+# trigger spack boostrapping
+spack spec htop
+
+module load gcc/11
+spack compiler find
+spack install -j 8 intel-oneapi-compilers@2022.1.0%gcc@11.2.0
+spack load intel-oneapi-compilers@2022.1.0%gcc@11.2.0
+spack compiler find
+
+git clone https://github.com/ExCALIBUR-NEPTUNE/NESO-Spack.git $SCRATCH/git/NESO-Spack
+spack repo add $SCRATCH/git/NESO-Spack
+
+spack install -j 8 neso.neso%oneapi@2022.1.0 ^dpcpp ^intel-oneapi-mkl@2022.1.0 ^intel-oneapi-mpi@2021.7.1 ^scotch@7.0.1 ^python%gcc@11.2.0 ^py-numpy%gcc@11.2.0 ^neso-particles@main ^nektar+adr_solver ^boost@1.80.0
+
+
