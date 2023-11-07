@@ -1,8 +1,4 @@
 #!/bin/bash
-#!
-#! Example SLURM job script for Peta4-Skylake (Skylake CPUs, OPA)
-#! Last updated: Mon 13 Nov 12:25:17 GMT 2017
-#!
 
 #!#############################################################
 #!#### Modify the options in this section as appropriate ######
@@ -15,8 +11,8 @@
 #SBATCH -A UKAEA-AP001-CPU
 #! How many whole nodes should be allocated?
 #SBATCH --nodes=1
-#! How many (MPI) tasks will there be in total? (<= nodes*32)
-#! The skylake/skylake-himem nodes have 32 CPUs (cores) each.
+#! How many (MPI) tasks will there be in total? (<= nodes*32 for skl and nodes*56 for cclake)
+#! The skylake/skylake-himem nodes have 32 CPUs (cores) each, cclake 56.
 #SBATCH --ntasks=8
 #! How much wallclock time will be required?
 #SBATCH --time=01:00:00
