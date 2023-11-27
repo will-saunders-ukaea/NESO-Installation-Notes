@@ -14,7 +14,7 @@ spack:
   concretizer:
     unify: when_possible
   repos:
-  - ./NESO-Spack
+  - ../../NESO/NESO-Spack
   - $spack/var/spack/repos/builtin
   develop:
     neso:
