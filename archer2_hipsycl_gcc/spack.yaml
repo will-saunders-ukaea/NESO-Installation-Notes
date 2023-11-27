@@ -21,7 +21,7 @@ spack:
       path: ../../NESO
       spec: neso@working
     nektar:
-      spec: nektar@5.3.0-2e0fb8
+      spec: nektar@5.2.0-2022-09-03
     neso-particles:
       path: ../../NESO/neso-particles
       spec: neso-particles@working
