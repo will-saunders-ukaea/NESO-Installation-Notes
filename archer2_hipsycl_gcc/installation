@@ -1,0 +1,29 @@
+
+# git repo on work filesystem
+cd $SCRATCH
+mkdir -p git
+cd $SCRATCH/git
+
+# clone NESO
+git clone --recurse-submodules https://github.com/ExCALIBUR-NEPTUNE/NESO.git
+# clone this repository
+git clone https://github.com/will-saunders-ukaea/NESO-Installation-Notes.git
+# clone spack
+git clone https://github.com/spack/spack.git
+# checkout spack version
+cd spack
+git checkout releases/v0.20
+# source spack
+source $SCRATCH/git/spack/share/spack/setup-env.sh
+
+# source spack environment
+spack env activate -d $SCRATCH/git/NESO-Installation-Notes/archer2_hipsycl_gcc
+
+# installation using gcc
+spack install
+
+
+
+
+
+
