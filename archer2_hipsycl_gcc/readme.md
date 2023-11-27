@@ -6,6 +6,13 @@ cd $SCRATCH/git
 
 # clone NESO
 git clone --recurse-submodules https://github.com/ExCALIBUR-NEPTUNE/NESO.git
+
+# checkout temporary bugfix repository, skip if https://github.com/ExCALIBUR-NEPTUNE/NESO/pull/219 is merged.
+cd NESO
+git checkout --recurse-submodules feature/bump-neso-particles-hdf5-fix
+cd ..
+
+
 # clone this repository
 git clone https://github.com/will-saunders-ukaea/NESO-Installation-Notes.git
 # clone spack
