@@ -5,7 +5,7 @@ mkdir -p git
 cd $SCRATCH/git
 
 # clone NESO
-git clone --recurse-submodules https://github.com/ExCALIBUR-NEPTUNE/NESO.git
+git clone --recurse-submodules https://github.com/ExCALIBUR-NEPTUNE/NESO.git --branch feature/bump-neso-particles-hdf5-fix
 
 # checkout temporary bugfix repository, skip if https://github.com/ExCALIBUR-NEPTUNE/NESO/pull/219 is merged.
 cd NESO
