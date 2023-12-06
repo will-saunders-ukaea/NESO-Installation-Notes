@@ -12,7 +12,6 @@ cd NESO
 git checkout --recurse-submodules feature/bump-neso-particles-hdf5-fix
 cd ..
 
-
 # clone this repository
 git clone https://github.com/will-saunders-ukaea/NESO-Installation-Notes.git
 # clone spack
@@ -26,8 +25,8 @@ source $SCRATCH/git/spack/share/spack/setup-env.sh
 # source spack environment
 spack env activate -d $SCRATCH/git/NESO-Installation-Notes/archer2_hipsycl_gcc
 
-# installation using gcc
-spack install
+# installation using gcc 
+spack install -j 16
 
 
 
