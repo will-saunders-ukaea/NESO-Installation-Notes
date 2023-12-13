@@ -24,7 +24,7 @@ git clone --recurse-submodules https://github.com/ExCALIBUR-NEPTUNE/NESO.git $SC
 spack repo add $SCRATCH/git/NESO/NESO-Spack
 
 # Install the NESO solvers
-spack install -j 16 neso.neso%oneapi@2022.1.0 ^dpcpp ^intel-oneapi-mkl@2022.1.0 ^intel-oneapi-mpi@2021.7.1 ^scotch@7.0.1 ^python%gcc@11.2.0 ^py-numpy%gcc@11.2.0 ^neso-particles@main ^nektar+adr_solver ^boost@1.80.0
+spack install -j 16 neso.neso%oneapi@2022.1.0 ^dpcpp ^intel-oneapi-mkl@2022.1.0 ^intel-oneapi-mpi@2021.7.1 ^scotch@7.0.1 ^python%gcc@11.2.0 ^py-numpy%gcc@11.2.0 ^neso-particles@main ^nektar@5.2.0-2022-09-03+compflow_solver ^boost@1.80.0
 
 # Alternative manually building from git
 # spack load --only dependencies neso
